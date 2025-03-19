@@ -8,7 +8,7 @@ SELECT *
 FROM employee_demographics;
 
 -- first let's look at group by
-SELECT gender, ROUND(AVG(salary),1)
+SELECT gender, ROUND(AVG(salary),1) -- gives decimal upto 1 value
 FROM employee_demographics dem
 JOIN employee_salary sal
 	ON dem.employee_id = sal.employee_id
@@ -69,7 +69,8 @@ JOIN employee_salary sal
 -- let's compare this to rank
 SELECT dem.employee_id, dem.first_name, gender, salary,
 ROW_NUMBER() OVER(PARTITION BY gender ORDER BY salary desc) row_num,
-Rank() OVER(PARTITION BY gender ORDER BY salary desc) rank_1 
+Rank() OVER(PARTITION BY gender ORDER BY salary desc) rank_1
+	-- in rank() if duplicate value is encountered it gives same value for both based on order of salary and rank is ordered based on position
 FROM employee_demographics dem
 JOIN employee_salary sal
 	ON dem.employee_id = sal.employee_id
