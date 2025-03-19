@@ -44,7 +44,7 @@ FROM employee_salary;
 # The Parks department is trying to cut their budget and wants to identify older employees they can push out or high paid employees who they can reduce pay or push out
 -- let's create some queries to help with this
 
-SELECT first_name, last_name, 'Old'
+SELECT first_name, last_name, 'Old' --here Old is treated as column name and value alos Old
 FROM employee_demographics
 WHERE age > 50;
 
