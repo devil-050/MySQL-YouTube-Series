@@ -62,7 +62,14 @@ SELECT gender, AVG(Min_age)
 FROM (SELECT gender, MIN(age) Min_age, MAX(age) Max_age, COUNT(age) Count_age ,AVG(age) Avg_age
 FROM employee_demographics
 GROUP BY gender) AS Agg_Table
-GROUP BY gender
+GROUP BY gender-- finally we should do group by function if we are doing aggregate function
+;
+-- or we can use back_tick instead of aliasing
+SELECT gender, AVG(`MIN(age)`) -- this `  ` means its not aggregate function it treats as column name
+FROM (SELECT gender, MIN(age) , MAX(age) Max_age, COUNT(age) Count_age ,AVG(age) Avg_age
+FROM employee_demographics
+GROUP BY gender) AS Agg_Table
+GROUP BY gender 
 ;
 
 
