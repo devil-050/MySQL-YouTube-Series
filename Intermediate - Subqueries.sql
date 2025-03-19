@@ -6,7 +6,7 @@ SELECT *
 FROM employee_demographics;
 
 
-#Now let's say we wanted to look at employees who actually work in the Parks and Rec Department, we could join tables together or we could use a subquery
+--Now let's say we wanted to look at employees who actually work in the Parks and Rec Department, we could join tables together or we could use a subquery
 #We can do that like this:
 
 SELECT *
