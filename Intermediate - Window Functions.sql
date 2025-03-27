@@ -90,6 +90,36 @@ JOIN employee_salary sal
 ;
 
 
+-- to obtain 3rd and 8th highest salary
+
+WITH RankedSalaries AS (
+    SELECT DISTINCT salary, 
+           DENSE_RANK() OVER (ORDER BY salary DESC) AS rnk 
+    FROM employees
+)
+SELECT salary 
+FROM RankedSalaries 
+WHERE rnk IN (3, 8);
+
+-- another method
+
+SELECT DISTINCT salary 
+FROM employees 
+ORDER BY salary DESC 
+LIMIT 1 OFFSET 2; -- Fetches the 3rd highest salary
+
+SELECT DISTINCT salary 
+FROM employees 
+ORDER BY salary DESC 
+LIMIT 1 OFFSET 7; -- Fetches the 8th highest salary
+
+
+--ORDER BY salary DESC: Orders salaries in descending order.
+
+--DISTINCT: Ensures that duplicate salaries are not considered.
+
+--LIMIT 1 OFFSET n: Fetches one row, skipping n rows (0-based index)
+
 
 
 
