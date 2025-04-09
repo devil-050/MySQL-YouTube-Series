@@ -28,7 +28,7 @@ GROUP BY occupation
 
 -- notice there is only one office manager row
 
--- when we group by 2 columns we now have a row for both occupation and salary because salary is different
+-- when we group by 2 columns we now have a row for both occupation and salary because salary is different(it acts like grouping two attributes together)
 SELECT occupation, salary
 FROM employee_salary
 GROUP BY occupation, salary
