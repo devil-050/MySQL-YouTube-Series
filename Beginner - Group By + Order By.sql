@@ -76,11 +76,15 @@ SELECT *
 FROM employee_demographics
 ORDER BY first_name DESC;
 
-#Now we can also do multiple columns like this:
+#Now we can also do multiple columns like this: first it will order gender than age
 
 SELECT *
 FROM employee_demographics
 ORDER BY gender, age;
+
+SELECT *
+FROM employee_demographics
+ORDER BY age,gender; -- it will not follow correct order by it will order only by age
 
 SELECT *
 FROM employee_demographics
