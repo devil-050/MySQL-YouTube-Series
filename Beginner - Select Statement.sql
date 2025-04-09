@@ -78,5 +78,10 @@ FROM employee_salary;
 SELECT DISTINCT department_id
 FROM employee_salary;
 
+--it will take distinct combination of both
+
+SELECT DISTINCT department_id,salary 
+FROM employee_salary;
+
 #Now a lot happens in the select statement. We have an entire module dedicated to just the 
 #select statement so this is kind of just an introduction to the select statement.
